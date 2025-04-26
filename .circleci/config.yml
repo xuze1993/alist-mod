@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: cimg/base:stable
+    env:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     steps:
       - checkout
       - setup_remote_docker
