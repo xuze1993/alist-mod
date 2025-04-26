@@ -1,5 +1,6 @@
 FROM alpine:edge as builder
 LABEL stage=go-builder
+ENV CGO_CFLAGS="-D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
 WORKDIR /app/
 RUN apk add --no-cache bash curl gcc git go musl-dev sqlite-dev
 COPY go.mod go.sum ./
