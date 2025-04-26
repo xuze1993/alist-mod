@@ -3,9 +3,6 @@ jobs:
   build:
     docker:
       - image: cimg/base:stable
-    environment:
-      DOCKER_USERNAME: $DOCKER_USERNAME
-      DOCKER_PASSWORD: $DOCKER_PASSWORD
     steps:
       - checkout
       - setup_remote_docker
